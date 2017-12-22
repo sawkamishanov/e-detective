@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Электронный детектив</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="">
+	<link rel="stylesheet" href="../../css/font/font.css">
+	<link rel="stylesheet" href="../../css/main.css">
+	<link rel="stylesheet" href="../../css/decide.css">
+	<link rel="stylesheet" href="../../css/menu.css">
+	<script src="../../js/resolution.lib.js"></script>
+	<script src="../../js/jquery-2.1.3.min.js"></script>
+	<script src="../../js/resModule.lib.js"></script>
+	<script src="../../js/main.js"></script>
+</head>
+<body>
+	<ul id="menu">
+	<li><a href="../../main/menu/index.html">Главное меню</a></li>
+    <li><a href="../../main/menu/help.html">Помощь</a></li>
+    <li><a href="../../main/menu/about.html">О нас</a></li>
+	</ul>
+	<div id="overlay">
+		<div id="welcome">
+			<h1>Ограбление сейфа</h1>
+			Когда закончите, нажмите кнопку "расследовать" и детектив проведет расследование.<br><br>
+			<button onclick="javascript:hideWelcome();">Начать</button>
+		</div>
+
+	</div>
+	<div id="solveWindow">
+		<div id="solve">
+		
+		</div>
+		<a onclick="closeSolution()" href="#">Закрыть окно</a>
+	</div>
+	<div id="wrapper">
+		<div id="content">
+			</menu>
+			<div id="picture" style="">
+				<img src="det1_bg.jpg" width="100%" class="mainPicture" data-width="1200" data-height="475">
+				<div class="expPicture" data-x="45" data-y="20" data-width="139" data-height="131"></div>
+				<div class="expPicture" data-x="830" data-y="270" data-width="72" data-height="40"></div>
+				<h2>История</h2>
+				Был вскрыт сейф, сигнализация не сработала.
+				Доступ к отключению сигнализации утром имеет только Алекс. Поэтому 
+                <span data-expression="LogicImplication(LogicAND(%S%,LogicNOT(%N%)),%A%)">если сигнализация работала и преступление произошло не ночью, то Алекс преступник.</span>
+				<span data-expression="LogicImplication(%LB%,%S%)">Брюс всегда включает сигнализацию, когда уходит с работы</span>, в отличие от остальных - <span data-expression="LogicImplication(LogicNOT(%LB%),LogicNOT(%S%))">остальные постоянно забывают это делать</span>.
+				<span data-expression="LogicOR(%LB%,LogicOR(%LC%,%LD%))">Вчера на работе были Карл, Дилан и Брюс</span>
+				<span data-expression="LogicAND(%MC%,LogicAND(%MD%,%MA%))">Сегодня утром на работу пришли Алекс, Карл и Дилан</span>
+				<span data-expression="LogicAND(LogicNOT(%LB%),LogicOR(%LC%,%LD%))">Вчера было чётное число, по чётным числам Брюс уезжает раньше всех в типографию.</span> По нечетным происходит наоборот.<span data-expression="%N%">Ночью камеры не работали и сейф не контролировался. </span><span data-expression="LogicImplication(LogicAND(%LC%,%MC%),%C%)">Если Карл ушёл последним и пришёл утром, то он преступник</span>
+				<span data-expression="LogicImplication(LogicAND(%LB%,%N%),%B%)">Если Брюс ушёл последним и преступление произошло ночью, то он преступник.</span><span data-expression="LogicImplication(LogicAND(%LD%,%MD%),%D%)">Если Дилан ушёл последним и пришёл утром, то он преступник.</span>
+			</div>
+			<div style="margin-top: 20px" class="workplace">
+				<div id="variables" style="float: left; width: 33%;">
+					<span data-name="A" data-inversion="Алекс не виновен" data-final="true">Алекс - преступник</span>
+					<span data-name="B" data-inversion="Брюс не виновен" data-final="true">Брюс - преступник</span>
+					<span data-name="C" data-inversion="Карл не виновен" data-final="true">Карл - преступник</span>
+					<span data-name="D" data-inversion="Дилан не виновен" data-final="true">Дилан - преступник</span>
+					<span data-name="LB" data-inversion="Брюс ушёл из офиса не последним">Брюс ушёл из офиса последним</span>
+					<span data-name="LC" data-inversion="Карл ушёл из офиса не последним">Карл ушёл из офиса последним</span>
+					<span data-name="LD" data-inversion="Дилан ушёл из офиса не последним">Дилан ушёл из офиса последним</span>
+					<span data-name="N" data-inversion="преступление произошло не ночью">преступление произошло ночью</span>
+					<span data-name="MA" data-inversion="Алекс пришёл на работу не утром">Алекс пришёл на работу утром</span>
+					<span data-name="MC" data-inversion="Карл пришёл на работу не утром">Карл пришёл на работу утром</span>
+					<span data-name="MD" data-inversion="Дилан пришёл на работу не утром">Дилан пришёл на работу утром</span>
+					<span data-name="S" data-inversion="сигнализация не работала">сигнализация работала</span>
+				</div>
+				<div id="expressions" style="float: left; width: 33%">
+					<p>Логические выражения</p>
+				</div>
+				<div id="proofs" style="float: left; width: 33%;">
+					<p>Окно доказательств<button class="check" onclick="javascript:solveButton();">Разгадать</button></p>
+				</div>
+				<div style="clear: both;"></div>
+			</div>
+		</div>
+	</div>
+	
+
+</body>

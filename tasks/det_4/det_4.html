@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>Электронный детектив</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="">
+	<link rel="stylesheet" href="../../css/font/font.css">
+	<link rel="stylesheet" href="../../css/main.css">
+	<link rel="stylesheet" href="../../css/decide.css">
+	<link rel="stylesheet" href="../../css/menu.css">
+	<script src="../../js/resolution.lib.js"></script>
+	<script src="../../js/jquery-2.1.3.min.js"></script>
+	<script src="../../js/resModule.lib.js"></script>
+	<script src="../../js/main.js"></script>
+
+  <ul id="menu">
+    <li><a href="../../main/menu/index.html">Главное меню</a></li>
+    <li><a href="../../main/menu/help.html">Помощь</a></li>
+    <li><a href="../../main/menu/about.html">О нас</a></li>
+  </ul>
+</head>
+<body>
+	<div id="overlay">
+		<div id="welcome">
+		  <h1>Убийство на корабле</h1>
+		  Когда закончите, нажмите кнопку "расследовать" и детектив проведет расследование.<br><br>
+		  <button onclick="javascript:hideWelcome();">Начать</button>
+		</div>
+	</div>
+	<div id="solveWindow">
+		<div id="solve"></div>
+		<a onclick="closeSolution()" href="#">Закрыть окно</a>
+	</div>
+	<div id="wrapper">
+		<div id="content">
+			<div id="picture" style="">
+				<img src="det4_super.jpg" width="100%" class="mainPicture" data-width="1000" data-height="300">
+        <div class="expPicture" data-x="350" data-y="30" data-width="300" data-height="100"></div>
+        <div class="expPicture" data-x="800" data-y="170" data-width="50" data-height="21"></div>
+				<h2>История</h2>
+        На трансатлантическом корабле “Королева Елизавета“, совершавшим свое путешествие в Новый Свет, произошло убийство одного из пассажиров. Кто же повинен в этом тяжком преступлении?
+        Известно, что убийство произошло во время ужина в 18.00. Отчего погибла жертва точно неизвестно.
+        <span data-expression="LogicNOT(%P%)">Беглый осмотр не показал признаков отравления.</span>
+        У детектива есть пять подозреваемых:
+        <span data-expression="LogicOR(%A%, LogicOR(LogicOR(%B%, %C%), LogicOR(%D%, %E%)))">Леди, Боцман, Капитан, Доктор, Шпион.</span>
+        Кто же из них убийца? Очевидно, что кто-то из них должен был находиться во время ужина в ресторане. Задача детектива эта выяснить. <br>
+        Были сопоставлены известные факты:
+				Каждому известно, что яд есть у Боцмана. Также некоторые очевидцы утверждают, что яд есть у Леди, т.к. у нее близкие отношения с Боцманом.
+        У Капитан есть сейф, в котором хранится пистолет. Ключи от сейфа есть только у него и Доктора.
+        Также на корабле находится такая подозрительная личность как Шпион, который имеет доступ ко всем помещениям корабля и мог украсть или яд или пистолет.<br>
+				После опроса свидетелей были установлены следующие факты:<br>
+				<!--Утверждения-->
+        <span data-expression="LogicNOT(%S%)">«Всю неделю был шторм, и в день убийства тоже».</span><br>
+        <span data-expression="LogicImplication(%S%, %PC%)">«Известно, что Капитан не покидает капитанского мостика во время шторм».</span><br>
+        <span data-expression="LogicImplication(%PC%, LogicNOT(%PB%))">«Если Капитан находился в ресторане, то Боцман точно там не был».</span><br>
+        <span data-expression="LogicAND(LogicNOT(%PE%), LogicOR(%PC%, %PB%))">«Шпион посещает ресторан, если там не нет Капитана или Боцмана».</span><br>
+        <span data-expression="LogicImplication(LogicNOT(%PE%), LogicImplication(%PD%, %PA%))">«Если не было Шпиона и был Доктор, то Леди была во время убийства».</span><br>
+        <span data-expression="LogicImplication(LogicNOT(%PA%), LogicNOT(%A%))">«Леди не была в ресторане во время убийства - Леди не убийца.»</span><br>
+        <span data-expression="LogicImplication(LogicNOT(%PB%), LogicNOT(%B%))">«Боцман не был в ресторане во время убийства - Боцман не убийца.»</span><br>
+        <span data-expression="LogicImplication(LogicNOT(%PC%), LogicNOT(%C%))">«Капитан не был в ресторане во время убийства - Капитан не убийца.»</span><br>
+        <span data-expression="LogicImplication(LogicNOT(%PD%), LogicNOT(%D%))">«Доктор не был в ресторане во время убийства - Доктор не убийца.»</span><br>
+        <span data-expression="LogicImplication(LogicNOT(%PE%), LogicNOT(%E%))">«Шпион не был в ресторане во время убийства - Шпион не убийца.»</span><br>
+        <span data-expression="LogicImplication(%P%, LogicOR(%A%, LogicOR(%B%, %E%)))">«Жертва отравлена, то убийца Леди или Боцман или Шпион.»</span><br>
+        <span data-expression="LogicImplication(LogicNOT(%P%), LogicOR(%D%, LogicOR(%C%, %E%)))">«Жертва застрелена, то убийца Доктор или Капитан или Шпион.»</span><br>
+			</div>
+			<div style="margin-top: 20px" class="workplace">
+				<div id="variables" style="float: left; width: 33%;">
+					<span data-name="A" data-inversion="убийца не Леди" data-final="true">убийца Леди</span>
+          <span data-name="B" data-inversion="убийца не Боцман" data-final="true">убийца Боцман</span>
+          <span data-name="C" data-inversion="убийца не Капитан" data-final="true">убийца Капитан</span>
+          <span data-name="D" data-inversion="убийца не Доктор" data-final="true">убийца Доктор</span>
+          <span data-name="E" data-inversion="убийца не Шпион" data-final="true">убийца Шпион</span>
+          <span data-name="PA" data-inversion="Леди не была в ресторане во время убийства">Леди была в ресторане во время убийства</span>
+          <span data-name="PB" data-inversion="Боцман не был в ресторане во время убийства">Боцман был в ресторане во время убийства</span>
+          <span data-name="PC" data-inversion="Капитан не был в ресторане во время убийства">Капитан был в ресторане во время убийства</span>
+          <span data-name="PD" data-inversion="Доктор не был в ресторане во время убийства">Доктор был в ресторане во время убийства</span>
+          <span data-name="PE" data-inversion="Шпион не был в ресторане во время убийства">Шпион был в ресторане во время убийства</span>
+          <span data-name="P" data-inversion="жертва не была отравлена">жертва была отравлена</span>
+          <span data-name="AM" data-inversion="убийство произошло ночью">убийство произошло днем</span>
+          <span data-name="S" data-inversion="во время убийства был шторм">во время убийства был штиль</span>
+				</div>
+				<div id="expressions" style="float: left; width: 33%">
+					<p>Логические выражения</p>
+				</div>
+				<div id="proofs" style="float: left; width: 33%;">
+					<p>Окно доказательств<button class="check" onclick="javascript:solveButton();">Разгадать</button></p>
+				</div>
+				<div style="clear: both;"></div>
+			</div>
+		</div>
+	</div>
+</body>

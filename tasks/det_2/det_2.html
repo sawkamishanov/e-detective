@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Электронный детектив</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="">
+	<link rel="stylesheet" href="../../css/font/font.css">
+	<link rel="stylesheet" href="../../css/main.css">
+	<link rel="stylesheet" href="../../css/decide.css">
+	<link rel="stylesheet" href="../../css/menu.css">
+	<script src="../../js/resolution.lib.js"></script>
+	<script src="../../js/jquery-2.1.3.min.js"></script>
+	<script src="../../js/resModule.lib.js"></script>
+	<script src="../../js/main.js"></script>
+</head>
+<body>
+	<ul id="menu">
+	<li><a href="../../main/menu/index.html">Главное меню</a></li>
+    <li><a href="../../main/menu/help.html">Помощь</a></li>
+    <li><a href="../../main/menu/about.html">О нас</a></li>
+	</ul>
+	<div id="overlay">
+		<div id="welcome">
+			<h1>Кража древнего свитка</h1>
+			Когда закончите, нажмите кнопку "расследовать" и детектив проведет расследование.<br><br>
+			<button onclick="javascript:hideWelcome();">Начать</button>
+		</div>
+
+	</div>
+	<div id="solveWindow">
+		<div id="solve">
+		
+		</div>
+		<a onclick="closeSolution()" href="#">Закрыть окно</a>
+	</div>
+	<div id="wrapper">
+		<div id="content">
+			</menu>
+			<div id="picture" style="">
+				<img src="det2_bg.jpg" width="100%" class="mainPicture" data-width="1200" data-height="475">
+				<div class="expPicture" data-x="930" data-y="280" data-width="30" data-height="60"></div>  <!--5-->
+				<div class="expPicture" data-x="689" data-y="180" data-width="40" data-height="30"></div> <!--Фигнал-->
+				<div class="expPicture" data-x="310" data-y="330" data-width="80" data-height="80"></div>  <!--физра-->
+				<h2>История</h2>
+				Из музея исчез древний и очень ценный свиток. На следующий день состоялось расследование.
+				<br><span data-expression="LogicOR(LogicOR(%V%,%E%),LogicOR(%G%,%M%))">В последнее время музей посещали всего несколько ребят из младшей школы, расположенной неподалёку: Гриша, Миша, Эля и Вова - забрал свиток кто-то из них.</span> Никто из ребят не признаётся, поэтому начнём расследование!
+				<br><br>Всем известно, что Эля ходит в музей каждый день <span data-expression="%Me%" >и в тот день была тоже</span>, а Вова заходит в музей только после занятий по физкультуре, которые проходят по чётным дням недели, поэтому в музее его всегда видят с мешком для спортивной формы. Гриша и Миша враждуют друг с другом из-за Эли, поэтому в музей до сегодняшнего дня приходили только в разные дни, то есть <span data-expression="LogicImplication(%Mm%,LogicNOT(%Mg%))">Гриша никогда не посещал музей, когда там был Миша</span>, <span data-expression="LogicImplication(%Mg%, LogicNOT(%Mm%))">а Миша никогда не посещал музей, когда там был Гриша.</span>При этом каждый из них обязательно появляется в музее, когда там есть Эля. Пару дней назад Миша и Гриша подрались из-за неё, и последние два раза в музей с ней ходил победитель. Известно, что победитель вышел из драки с меньшим уроном для внешнего вида. То есть, <span data-expression="LogicImplication(LogicNOT(%Gm%),LogicImplication(%Me%,%Mm%))" >если Миша победитель и Эля была в музее в день продажи, то Миша был в музее</span>, <span data-expression="LogicImplication(%Gm%,LogicImplication(%Me%,%Mg%))" >если Гриша победитель и Эля была в музее в день продажи, то Гриша был в музее.</span>
+				<br><br>После опроса одноклассников и работников музея удалось собрать некоторую информацию об участниках этого происшествия. Вам нужно отвергнуть ложную и подтвердить правильную, так чтобы ответ однозначно указал на виновника:<br>
+				-   <span data-expression="%Mv%">«Вова был вчера в музее (охранник говорит, что в день пропажи в музее он видел мальчика с мешком)».</span><br>
+					<!-- «Одноклассники Вовы считают, что если он был в день пропажи в музее, то он и взял свиток».<br> -->
+				-   <span data-expression="LogicImplication(LogicNOT(%X%),LogicNOT(%E%))">«Также одноклассники считают, что Эля не брала свиток, потому что она хорошая девочка</span>».<br>
+				-   <span data-expression="%X%">«Однако кое-кто утверждает, что Эля плохо учится, да и вообще она плохая девочка».</span><br>
+				-   <span data-expression="LogicImplication(LogicAND(%Me%,%Gm%), LogicOR(%E%,%G%))">«Если Эля была в музее в день пропажи и Гриша победил Мишу, то в пропаже свитка замешан Гриша или Эля».</span><br>
+				-   <span data-expression="LogicImplication(LogicAND(%Me%,LogicNOT(%Gm%)), LogicOR(%E%,%M%))">«Если же Эля была в музее в день пропажи и при этом Миша победил Гришу, то в пропаже свитка замешан Миша или Эля».</span><br>
+				-   <span data-expression="%Gm%">«В схватке Гриша победил Мишу (об этом кто-то сообщил по секрету)».</span>
+				<span data-expression="LogicImplication(LogicNOT(%Mm%),LogicNOT(%M%))" style="display:none;"></span>
+				<span data-expression="LogicImplication(LogicNOT(%Mv%),LogicNOT(%V%))" style="display:none;"></span>
+				<span data-expression="LogicImplication(LogicNOT(%Mg%),LogicNOT(%G%))" style="display:none;"></span>
+				<span data-expression="LogicImplication(LogicNOT(%Me%),LogicNOT(%E%))" style="display:none;"></span>
+				<br><br>
+				У кого же этот ценный и древний экспонат?
+			</div>
+			<div style="margin-top: 20px" class="workplace">
+				<div id="variables" style="float: left; width: 33%;">
+					<span data-name="G" data-inversion="Гриша не забрал свиток" data-final="true">Гриша забрал свиток</span>
+					<span data-name="M" data-inversion="Миша не забрал свиток" data-final="true">Миша забрал свиток</span>
+					<span data-name="E" data-inversion="Эля не забрала свиток" data-final="true">Эля забрала свиток</span>
+					<span data-name="V" data-inversion="Вова не забрал свиток" data-final="true">Вова забрал свиток</span>
+					<span data-name="Mv" data-inversion="Вова не был в музее в день пропажи">Вова был в музее в день пропажи</span>
+					<span data-name="Mg" data-inversion="Гриша не был в музее в день пропажи">Гриша был в музее в день пропажи</span>
+					<span data-name="Mm" data-inversion="Миша не был в музее в день пропажи">Миша был в музее в день пропажи</span>
+					<span data-name="Me" data-inversion="Эля не была в музее в день пропажи">Эля была в музее в день пропажи</span>
+					<span data-name="X" data-inversion="Эля учится хорошо, да и вообще хорошая девочка">Эля учится плохо, да и вообще плохая девочка</span>
+					<span data-name="Gm" data-inversion="Миша победил Гришу">Гриша победил Мишу</span>
+				</div>
+				<div id="expressions" style="float: left; width: 33%">
+					<p>Логические выражения</p>
+				</div>
+				<div id="proofs" style="float: left; width: 33%;">
+					<p>Окно доказательств<button class="check" onclick="javascript:solveButton();">Разгадать</button></p>
+				</div>
+				<div style="clear: both;"></div>
+			</div>
+		</div>
+	</div>
+	
+
+</body>

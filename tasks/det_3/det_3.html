@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Электронный детектив</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="">
+	<link rel="stylesheet" href="../../css/font/font.css">
+	<link rel="stylesheet" href="../../css/main.css">
+	<link rel="stylesheet" href="../../css/decide.css">
+	<link rel="stylesheet" href="../../css/menu.css">
+	<script src="../../js/resolution.lib.js"></script>
+	<script src="../../js/jquery-2.1.3.min.js"></script>
+	<script src="../../js/resModule.lib.js"></script>
+	<script src="../../js/main.js"></script>
+</head>
+<body>
+	<ul id="menu">
+	<li><a href="../../main/menu/index.html">Главное меню</a></li>
+    <li><a href="../../main/menu/help.html">Помощь</a></li>
+    <li><a href="../../main/menu/about.html">О нас</a></li>
+	</ul>
+	<div id="overlay">
+		<div id="welcome">
+			<h1>Кража кота Мурзика</h1>
+			Когда закончите, нажмите кнопку "расследовать" и детектив проведет расследование.<br><br>
+			<button onclick="javascript:hideWelcome();">Начать</button>
+		</div>
+
+	</div>
+	<div id="solveWindow">
+		<div id="solve">
+		
+		</div>
+		<a onclick="closeSolution()" href="#">Закрыть окно</a>
+	</div>
+	<div id="wrapper">
+		<div id="content">
+			</menu>
+				<img src="det3_bg.jpg" width="100%" class="mainPicture" data-width="1200" data-height="475">
+				<div class="expPicture" data-x="950" data-y="50" data-width="125" data-height="130"></div> <!--Расписание занятий-->
+				<div class="expPicture" data-x="280" data-y="350" data-width="95" data-height="90"></div>  <!--Миска-->
+				<div class="expPicture" data-x="590" data-y="80" data-width="79" data-height="90"></div>  <!--Записка-->
+				<h2>История</h2>
+				В квартире живут 4 студентки: Лиза, Света, Галя и Ксюша. Не все они одинаково прилежны, но Света всегда ходит на лекции. У Ксюши есть кот Мурзик. Еду в миску коту накладывает тот, кто первым возвращается вечером с учёбы, и Мурзик сразу съедает весь корм. Одна из соседок решила устроить Ксюше во вторник первоапрельский розыгрыш и спрятала кота в другом помещении. Ксюша должна угадать, кто похитил Мурзика.<br>
+				У неё есть некоторые предположения, и она хочет отвергнуть ложные из них и подтвердить правильные, так чтобы ответ однозначно указал на похитительницу. Вот что она думает:<br>
+				<!--Утверждения-->
+					<span data-expression="LogicOR(%S%,LogicOR(%G%,%L%))">«Наверняка, подшутил кто-то из моих соседок».</span><br>
+					<span data-expression="LogicAND(%S%,%M%)">«Первое, что приходит на ум — это сделала Света в первой половине дня».</span><br>
+					<span data-expression="%H%">«Помнится, что Галя вчера была дома».</span><br>
+					<span data-expression="%E%">«Кто-то успел покормить кота до его пропажи»</span><br>
+					<span data-expression="LogicEquivalence(LogicNOT(%E%),%M%)" style="display:none;"></span>
+					<span data-expression="LogicImplication(%G%,%H%)" style="display:none;"></span>
+			</div>
+			<div style="margin-top: 20px" class="workplace">
+				<div id="variables" style="float: left; width: 33%;">
+					<span data-name="H" data-inversion="Галя не была дома в день похищения">Галя была дома в день похищения</span>
+					<span data-name="E" data-inversion="Мурзик не был покормлен перед пропажей">Мурзик был покормлен перед пропажей</span>
+					<span data-name="M" data-inversion="Мурзика не похищали вчера до обеда">Мурзика похитили вчера до обеда</span>
+					<span data-name="S" data-inversion="Света не похищала кота" data-final="true">Света похитила кота</span>
+					<span data-name="G" data-inversion="Галя не похищала кота" data-final="true">Галя похитила кота</span>
+					<span data-name="L" data-inversion="Лиза не похищала кота" data-final="true">Лиза похитила кота</span>
+				</div>
+				<div id="expressions" style="float: left; width: 33%">
+					<p>Логические выражения</p>
+				</div>
+				<div id="proofs" style="float: left; width: 33%;">
+					<p>Окно доказательств<button class="check" onclick="javascript:solveButton();">Разгадать</button></p>
+				</div>
+				<div style="clear: both;"></div>
+			</div>
+		</div>
+	</div>
+	
+
+</body>
