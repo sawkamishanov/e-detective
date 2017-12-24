@@ -1,11 +1,11 @@
 ﻿<!DOCTYPE html><html class="no-js" lang="ru">
 <head>
-	<meta charset="utf-8">
-	<title>Пират и монета</title>
-	<meta name="description" content="">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-	<meta property="og:image" content="image.jpg">
+<meta charset="utf-8">
+<title>Убийство на корабле</title>
+<meta name="description" content="">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta property="og:image" content="image.jpg">
 			<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
 			<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
 			<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
@@ -28,9 +28,8 @@ webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figu
 								<div class="col-xs-12">
 									<div class="list">
 										<ul>
-											<li>!G</li>
-											<li>!Z</li>
-											<li>!E</li>
+											<li>S</li>
+											<li>P</li>
 										</ul>
 										</div>
 										<div id="solveWindow">
@@ -48,7 +47,7 @@ webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figu
 										</li>
 										<li class="solve-button">
 										<a href="#" onclick="solveButton();"><i class="fa fa-check-square-o" aria-hidden="true"></i></a></li>
-										<li><a class="zoom" data-image="det4_bg.jpg" href="#">
+										<li><a class="zoom" data-image="det5_bg.jpg" href="#">
 										<i class="fa fa-search-plus" aria-hidden="true"></i></a></li>
 												<li>
 												<a href="../../navigation/help.html"><i class="fa fa-question-circle-o" aria-hidden="true"></i></a>
@@ -61,29 +60,34 @@ webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figu
 										<div class="row">
 											<div class="col-xs-12 col-md-8 col-lg-9">
 												<div id="picture" style="">
-												<img alt="" class="mainPicture" data-height="475" data-width="1200" src="det4_bg.jpg">
-													<div class="expPicture" data-x="350" data-y="80" data-width="100" data-height="150"></div>
-													<div class="expPicture" data-x="750" data-y="150" data-width="230" data-height="220"></div>
-													<div class="expPicture" data-x="60" data-y="150" data-width="230" data-height="220"></div>
+												<img alt="" class="mainPicture" data-height="475" data-width="1200" src="det5_bg.jpg">
+													<div class="expPicture" data-x="350" data-y="30" data-width="300" data-height="100"></div>
+													<div class="expPicture" data-x="800" data-y="170" data-width="230" data-height="221"></div>
 														<h2>История</h2>
-															На пиратском корабле у капитана куда-то запропастилась золотая монета.<br>
-															Это произошло недавно, а корабль не причаливал к суше уже долгие месяцы, поэтому в пропаже точно замешан кто-то из команды,
-															<span data-expression="LogicOR(%D%, LogicOR(LogicOR(%J%, %S%), LogicOR(%R%, %L%)))">то ли юнга Дэн, который любит поспорить, но никогда споров не выигрывает, то ли один из двух бывалых пиратов-близнецов Джон или Шон,
-															то ли попугай Рэй, верный спутник этой команды, то ли её потерял сам капитан корабля.</span><br>
-															Для расследования происшедшего случая есть некоторая информация, которую нужно сравнить с картинкой, отвергнуть ложные утверждения
-															и подтвердить верные, так чтобы ответ однозначно указал на виновника.<br>
-															Сначала свои показания дал капитан, в честности которого можно не сомневаться. Он сказал, что за пропавшую монету можно купить три бутылки рома.
-															От остальных членов команды поступили следующие сведения.<br>
-															<!--Утверждения-->
-															<span data-expression="%G%">«Капитан ходит в очках».</span><br>
-															<span data-expression="%Z%">«Клетка Рэя открыта».</span><br>
-															<span data-expression="%E%">«Монета имеет нечётый номинал».</span><br>
-															<span data-expression="LogicNOT(%V%)">«Дэн никогда не выигрывает споров».</span><br>
-															<span data-expression="LogicImplication(LogicOR(%J%, %S%), %E%)">«Монету взял один из близнецов Джон или Шон, потом они поделили её поровну, значит, она была чётного номинала».</span><br>
-															<span data-expression="LogicEquivalence(%V%, %D%)">«Дэн поспорил с близнецами, что стащит у капитана монету».</span><br>
-															<span data-expression="LogicImplication(%Z%, LogicNOT(%R%))">«Рэй не мог этого сделать, потому что сидит в закрытой клетке».</span><br>
-															<span data-expression="LogicImplication(LogicNOT(%G%), LogicNOT(%L%))">«Капитан корабля плохо видит, но не носит очков. А если бы капитан носил очки, никогда бы не потерял монету».</span><br>
-															Кто же замешан в пропаже монеты?<br>
+															На трансатлантическом корабле “Королева Елизавета“, совершавшим свое путешествие в Новый Свет, произошло убийство одного из пассажиров. Кто же повинен в этом тяжком преступлении?
+															Известно, что убийство произошло во время ужина в 18.00. Отчего погибла жертва точно неизвестно.
+															<span data-expression="LogicNOT(%P%)">Беглый осмотр не показал признаков отравления.</span>
+															У детектива есть пять подозреваемых:
+															<span data-expression="LogicOR(%A%, LogicOR(LogicOR(%B%, %C%), LogicOR(%D%, %E%)))">Леди, Боцман, Капитан, Доктор, Шпион.</span>
+															Кто же из них убийца? Очевидно, что кто-то из них должен был находиться во время ужина в ресторане. Задача детектива эта выяснить. <br>
+															Были сопоставлены известные факты:
+																	Каждому известно, что яд есть у Боцмана. Также некоторые очевидцы утверждают, что яд есть у Леди, т.к. у нее близкие отношения с Боцманом.
+															У Капитан есть сейф, в котором хранится пистолет. Ключи от сейфа есть только у него и Доктора.
+															Также на корабле находится такая подозрительная личность как Шпион, который имеет доступ ко всем помещениям корабля и мог украсть или яд или пистолет.<br>
+																	После опроса свидетелей были установлены следующие факты:<br>
+																	<!--Утверждения-->
+															<span data-expression="LogicNOT(%S%)">«Всю неделю был шторм, и в день убийства тоже».</span><br>
+															<span data-expression="LogicImplication(%S%, %PC%)">«Известно, что Капитан не покидает капитанского мостика во время шторм».</span><br>
+															<span data-expression="LogicImplication(%PC%, LogicNOT(%PB%))">«Если Капитан находился в ресторане, то Боцман точно там не был».</span><br>
+															<span data-expression="LogicAND(LogicNOT(%PE%), LogicOR(%PC%, %PB%))">«Шпион посещает ресторан, если там не нет Капитана или Боцмана».</span><br>
+															<span data-expression="LogicImplication(LogicNOT(%PE%), LogicImplication(%PD%, %PA%))">«Если не было Шпиона и был Доктор, то Леди была во время убийства».</span><br>
+															<span data-expression="LogicImplication(LogicNOT(%PA%), LogicNOT(%A%))">«Леди не была в ресторане во время убийства - Леди не убийца.»</span><br>
+															<span data-expression="LogicImplication(LogicNOT(%PB%), LogicNOT(%B%))">«Боцман не был в ресторане во время убийства - Боцман не убийца.»</span><br>
+															<span data-expression="LogicImplication(LogicNOT(%PC%), LogicNOT(%C%))">«Капитан не был в ресторане во время убийства - Капитан не убийца.»</span><br>
+															<span data-expression="LogicImplication(LogicNOT(%PD%), LogicNOT(%D%))">«Доктор не был в ресторане во время убийства - Доктор не убийца.»</span><br>
+															<span data-expression="LogicImplication(LogicNOT(%PE%), LogicNOT(%E%))">«Шпион не был в ресторане во время убийства - Шпион не убийца.»</span><br>
+															<span data-expression="LogicImplication(%P%, LogicOR(%A%, LogicOR(%B%, %E%)))">«Жертва отравлена, то убийца Леди или Боцман или Шпион.»</span><br>
+															<span data-expression="LogicImplication(LogicNOT(%P%), LogicOR(%D%, LogicOR(%C%, %E%)))">«Жертва застрелена, то убийца Доктор или Капитан или Шпион.»</span><br>
 												 </div>
 											 </div>
 											 <div class="col-xs-11 col-xs-offset-1 col-sm-12 col-sm-offset-0 col-md-4 col-lg-3">
@@ -94,15 +98,19 @@ webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figu
 														 <li target="#expressions">Лог. выражения</li>
 														 <li target="#proofs">Доказательства</li></ul>
 														 <div id="variables" class="workplace-tab">
-																	<span data-name="D" data-inversion="Дэн не крал монету" data-final="true">Дэн украл монету</span>
-																  <span data-name="J" data-inversion="Джон не крал монету" data-final="true">Джон украл монету</span>
-																  <span data-name="S" data-inversion="Шон не крал монету" data-final="true">Шон украл монету</span>
-																  <span data-name="R" data-inversion="Рэй не крал монету" data-final="true">Рэй украл монету</span>
-																	<span data-name="L" data-inversion="капитан не потерял монету" data-final="true">капитан потерял монету</span>
-																  <span data-name="Z" data-inversion="Рэй сидит в открытой клетке">Рэй сидит в закрытой клетке</span>
-																	<span data-name="E" data-inversion="монета нечётного номинала">монета чётного номинала</span>
-																  <span data-name="V" data-inversion="Дэн проиграл спор">Дэн выиграл спор</span>
-																  <span data-name="G" data-inversion="капитан ходит в очках">капитан ходит без очков</span>
+																	<span data-name="A" data-inversion="убийца не Леди" data-final="true">убийца Леди</span>
+																  <span data-name="B" data-inversion="убийца не Боцман" data-final="true">убийца Боцман</span>
+																  <span data-name="C" data-inversion="убийца не Капитан" data-final="true">убийца Капитан</span>
+																  <span data-name="D" data-inversion="убийца не Доктор" data-final="true">убийца Доктор</span>
+																  <span data-name="E" data-inversion="убийца не Шпион" data-final="true">убийца Шпион</span>
+																  <span data-name="PA" data-inversion="Леди не была в ресторане во время убийства">Леди была в ресторане во время убийства</span>
+																  <span data-name="PB" data-inversion="Боцман не был в ресторане во время убийства">Боцман был в ресторане во время убийства</span>
+																  <span data-name="PC" data-inversion="Капитан не был в ресторане во время убийства">Капитан был в ресторане во время убийства</span>
+																  <span data-name="PD" data-inversion="Доктор не был в ресторане во время убийства">Доктор был в ресторане во время убийства</span>
+																  <span data-name="PE" data-inversion="Шпион не был в ресторане во время убийства">Шпион был в ресторане во время убийства</span>
+																  <span data-name="P" data-inversion="жертва не была отравлена">жертва была отравлена</span>
+																  <span data-name="AM" data-inversion="убийство произошло ночью">убийство произошло днем</span>
+																  <span data-name="S" data-inversion="во время убийства был шторм">во время убийства был штиль</span>
 														 </div>
 														 <div id="expressions" class="workplace-tab"></div>
 														 <div id="proofs" class="workplace-tab"></div>
