@@ -69,7 +69,7 @@ webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figu
 															<span data-expression="LogicNOT(%P%)">Беглый осмотр не показал признаков отравления.</span>
 															У детектива есть пять подозреваемых:
 															<span data-expression="LogicOR(%A%, LogicOR(LogicOR(%B%, %C%), LogicOR(%D%, %E%)))">Леди, Боцман, Капитан, Доктор, Шпион.</span>
-															Кто же из них убийца? Очевидно, что кто-то из них должен был находиться во время ужина в ресторане. Задача детектива эта выяснить. <br>
+															Кто же из них убийца? Очевидно, что кто-то из них должен был находиться во время ужина в ресторане. Задача детектива это выяснить. <br>
 															Были сопоставлены известные факты:
 																	Каждому известно, что яд есть у Боцмана. Также некоторые очевидцы утверждают, что яд есть у Леди, т.к. у нее близкие отношения с Боцманом.
 															У Капитан есть сейф, в котором хранится пистолет. Ключи от сейфа есть только у него и Доктора.
@@ -77,7 +77,7 @@ webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figu
 																	После опроса свидетелей были установлены следующие факты:<br>
 																	<!--Утверждения-->
 															<span data-expression="LogicNOT(%S%)">«Всю неделю был шторм, и в день убийства тоже».</span><br>
-															<span data-expression="LogicImplication(%S%, %PC%)">«Известно, что Капитан не покидает капитанского мостика во время шторм».</span><br>
+															<span data-expression="LogicImplication(%S%, %PC%)">«Известно, что Капитан не покидает капитанского мостика во время шторма».</span><br>
 															<span data-expression="LogicImplication(%PC%, LogicNOT(%PB%))">«Если Капитан находился в ресторане, то Боцман точно там не был».</span><br>
 															<span data-expression="LogicAND(LogicNOT(%PE%), LogicOR(%PC%, %PB%))">«Шпион посещает ресторан, если там не нет Капитана или Боцмана».</span><br>
 															<span data-expression="LogicImplication(LogicNOT(%PE%), LogicImplication(%PD%, %PA%))">«Если не было Шпиона и был Доктор, то Леди была во время убийства».</span><br>
