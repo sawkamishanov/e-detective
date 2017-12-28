@@ -75,9 +75,9 @@ webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figu
 															Сначала свои показания дал капитан, в честности которого можно не сомневаться. Он сказал, что за пропавшую монету можно купить три бутылки рома.
 															От остальных членов команды поступили следующие сведения.<br>
 															<!--Утверждения-->
-															<span data-expression="%G%">«Капитан ходит в очках».</span><br>
-															<span data-expression="%Z%">«Клетка Рэя открыта».</span><br>
-															<span data-expression="%E%">«Монета имеет нечётый номинал».</span><br>
+														    <span data-expression="%G%">«Капитан ходит без очков».</span><br>
+															<span data-expression="%Z%">«Рэй сидит в закрытой клетке».</span><br>
+															<span data-expression="%E%">«Монета  четного номинал».</span><br>
 															<span data-expression="LogicNOT(%V%)">«Дэн никогда не выигрывает споров».</span><br>
 															<span data-expression="LogicImplication(LogicOR(%J%, %S%), %E%)">«Монету взял один из близнецов Джон или Шон, потом они поделили её поровну, значит, она была чётного номинала».</span><br>
 															<span data-expression="LogicEquivalence(%V%, %D%)">«Дэн поспорил с близнецами, что стащит у капитана монету».</span><br>
@@ -94,15 +94,15 @@ webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figu
 														 <li target="#expressions">Лог. выражения</li>
 														 <li target="#proofs">Доказательства</li></ul>
 														 <div id="variables" class="workplace-tab">
-																	<span data-name="D" data-inversion="Дэн не крал монету" data-final="true">Дэн украл монету</span>
-																  <span data-name="J" data-inversion="Джон не крал монету" data-final="true">Джон украл монету</span>
-																  <span data-name="S" data-inversion="Шон не крал монету" data-final="true">Шон украл монету</span>
-																  <span data-name="R" data-inversion="Рэй не крал монету" data-final="true">Рэй украл монету</span>
-																	<span data-name="L" data-inversion="капитан не потерял монету" data-final="true">капитан потерял монету</span>
-																  <span data-name="Z" data-inversion="Рэй сидит в открытой клетке">Рэй сидит в закрытой клетке</span>
-																	<span data-name="E" data-inversion="монета нечётного номинала">монета чётного номинала</span>
-																  <span data-name="V" data-inversion="Дэн проиграл спор">Дэн выиграл спор</span>
-																  <span data-name="G" data-inversion="капитан ходит в очках">капитан ходит без очков</span>
+																 <span data-name="D" data-inversion="Дэн не крал монету" data-final="true">Дэн украл монету</span>
+																 <span data-name="J" data-inversion="Джон не крал монету" data-final="true">Джон украл монету</span>
+																 <span data-name="S" data-inversion="Шон не крал монету" data-final="true">Шон украл монету</span>
+																 <span data-name="R" data-inversion="Рэй не крал монету" data-final="true">Рэй украл монету</span>
+																 <span data-name="Z" data-inversion="Рэй сидит в открытой клетке">Рэй сидит в закрытой клетке</span>
+																 <span data-name="E" data-inversion="монета нечетного номинала">монета четного номинала</span>
+																 <span data-name="V" data-inversion="Дэн проиграл спор">Дэн выиграл спор</span>
+																 <span data-name="L" data-inversion="капитан не потерял монету"  data-final="true">капитан потерял монету</span>
+																 <span data-name="G" data-inversion="капитан носит очки">капитан не носит в очках</span>
 														 </div>
 														 <div id="expressions" class="workplace-tab"></div>
 														 <div id="proofs" class="workplace-tab"></div>
