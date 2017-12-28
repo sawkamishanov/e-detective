@@ -61,19 +61,11 @@
     <div class="col-lg-3"></div>
     <div class="col-lg-6">
       <h1 style="text-align: center;">Форма для обратной связи</h1>
-      <form class="form-horizontal" action="//formspree.io/savior.7@yandex.ru" method="POST">
-      <div class="form-group"><label class="col-sm-2 control-label" for="name">Имя</label>
-      <div class="col-sm-10"><input id="name" class="form-control" type="text" placeholder="Имя" /></div>
-      </div>
-      <div class="form-group"><label class="col-sm-2 control-label" for="city">Вопрос</label>
-      <div class="col-sm-10"><input id="city" class="form-control" type="text" placeholder="Вопрос(кратко)" /></div>
-      </div>
-      <div class="form-group"><label class="col-sm-2 control-label" for="email">Email</label>
-      <div class="col-sm-10"><input id="email" class="form-control" name="_replyto" type="email" placeholder="Email" /> <input name="_next" type="hidden"  value="https://sawkamishanov.github.io/" /> <input name="_subject" type="hidden" value="Новый отзыв!" /> <input name="_cc" type="hidden" value="another@email.com" /> <input  tyle="display: none;" name="_gotcha" type="text" /></div>
-      </div>
-      <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10"><button class="btn btn-default" type="submit">Отправить</button></div>
-      </div>
+      <form method="POST" action="http://formspree.io/savior.7@yandex.ru">
+  <input type="email" name="email" placeholder="Your email">
+  <textarea name="message" placeholder="Your message"></textarea>
+  <button type="submit">Send</button>
+</form>
       </form>
     </div>
     <div class="col-lg-3"></div>
