@@ -28,8 +28,8 @@ webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figu
 								<div class="col-xs-12">
 									<div class="list">
 										<ul>
-											<li>S</li>
-											<li>P</li>
+											<li>!S</li>
+											<li>!P</li>
 										</ul>
 										</div>
 										<div id="solveWindow">
@@ -66,7 +66,7 @@ webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figu
 														<h2>История</h2>
 															На трансатлантическом корабле “Королева Елизавета“, совершавшим свое путешествие в Новый Свет, произошло убийство одного из пассажиров. Кто же повинен в этом тяжком преступлении?
 															Известно, что убийство произошло во время ужина в 18.00. Отчего погибла жертва точно неизвестно.
-															<span data-expression="LogicNOT(%P%)">Беглый осмотр не показал признаков отравления.</span>
+															<span data-expression="%P%">Беглый осмотр не показал признаков отравления.</span>
 															У детектива есть пять подозреваемых:
 															<span data-expression="LogicOR(%A%, LogicOR(LogicOR(%B%, %C%), LogicOR(%D%, %E%)))">Леди, Боцман, Капитан, Доктор, Шпион.</span>
 															Кто же из них убийца? Очевидно, что кто-то из них должен был находиться во время ужина в ресторане. Задача детектива это выяснить. <br>
@@ -76,8 +76,8 @@ webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figu
 															Также на корабле находится такая подозрительная личность как Шпион, который имеет доступ ко всем помещениям корабля и мог украсть или яд или пистолет.<br>
 																	После опроса свидетелей были установлены следующие факты:<br>
 																	<!--Утверждения-->
-															<span data-expression="LogicNOT(%S%)">«Всю неделю был шторм, и в день убийства тоже».</span><br>
-															<span data-expression="LogicImplication(%S%, %PC%)">«Известно, что Капитан не покидает капитанского мостика во время шторма».</span><br>
+															<span data-expression="%S%">«Всю неделю был шторм, и в день убийства тоже».</span><br>
+															<span data-expression="LogicImplication(LogicNOT(%S%), %PC%)">«Известно, что Капитан не покидает капитанского мостика во время шторма».</span><br>
 															<span data-expression="LogicImplication(%PC%, LogicNOT(%PB%))">«Если Капитан находился в ресторане, то Боцман точно там не был».</span><br>
 															<span data-expression="LogicAND(LogicNOT(%PE%), LogicOR(%PC%, %PB%))">«Шпион посещает ресторан, если там не нет Капитана или Боцмана».</span><br>
 															<span data-expression="LogicImplication(LogicNOT(%PE%), LogicImplication(%PD%, %PA%))">«Если не было Шпиона и был Доктор, то Леди была во время убийства».</span><br>
@@ -86,8 +86,8 @@ webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figu
 															<span data-expression="LogicImplication(LogicNOT(%PC%), LogicNOT(%C%))">«Капитан не был в ресторане во время убийства - Капитан не убийца.»</span><br>
 															<span data-expression="LogicImplication(LogicNOT(%PD%), LogicNOT(%D%))">«Доктор не был в ресторане во время убийства - Доктор не убийца.»</span><br>
 															<span data-expression="LogicImplication(LogicNOT(%PE%), LogicNOT(%E%))">«Шпион не был в ресторане во время убийства - Шпион не убийца.»</span><br>
-															<span data-expression="LogicImplication(%P%, LogicOR(%A%, LogicOR(%B%, %E%)))">«Жертва отравлена, то убийца Леди или Боцман или Шпион.»</span><br>
-															<span data-expression="LogicImplication(LogicNOT(%P%), LogicOR(%D%, LogicOR(%C%, %E%)))">«Жертва застрелена, то убийца Доктор или Капитан или Шпион.»</span><br>
+															<span data-expression="LogicImplication(LogicNOT(%P%), LogicOR(%A%, LogicOR(%B%, %E%)))">«Жертва отравлена, то убийца Леди или Боцман или Шпион.»</span><br>
+															<span data-expression="LogicImplication(%P%, LogicOR(%D%, LogicOR(%C%, %E%)))">«Жертва застрелена, то убийца Доктор или Капитан или Шпион.»</span><br>
 												 </div>
 											 </div>
 											 <div class="col-xs-11 col-xs-offset-1 col-sm-12 col-sm-offset-0 col-md-4 col-lg-3">
