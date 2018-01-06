@@ -29,8 +29,8 @@ webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figu
 									<div class="list">
 										<ul>
 											<li>!G</li>
-											<li>!Z</li>
 											<li>!E</li>
+											<li>!Z</li>
 										</ul>
 										</div>
 										<div id="solveWindow">
@@ -62,15 +62,15 @@ webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figu
 											<div class="col-xs-12 col-md-8 col-lg-9">
 												<div id="picture" style="">
 												<img alt="" class="mainPicture" data-height="475" data-width="1200" src="det4_bg.jpg">
-													<div class="expPicture" data-x="350" data-y="80" data-width="100" data-height="150"></div>
-													<div class="expPicture" data-x="750" data-y="150" data-width="230" data-height="220"></div>
-													<div class="expPicture" data-x="80" data-y="200" data-width="200" data-height="220"></div>
+													<div class="expPicture" data-x="550" data-y="80" data-width="100" data-height="50"></div> <!--Очки-->
+													<div class="expPicture" data-x="890" data-y="280" data-width="150" data-height="150"></div><!--Ром-->
+													<div class="expPicture" data-x="80" data-y="200" data-width="200" data-height="220"></div><!--Клетка-->
 													<h4><font color="blue;">*Кликните на картинку, чтобы отобразились улики.</font></h4>
 														<h2>История</h2>
 															На пиратском корабле у капитана куда-то запропастилась золотая монета.<br>
 															Это произошло недавно, а корабль не причаливал к суше уже долгие месяцы, поэтому в пропаже точно замешан кто-то из команды,
-															<span data-expression="LogicOR(%D%, LogicOR(LogicOR(%J%, %S%), LogicOR(%R%, %L%)))">то ли юнга Дэн, который любит поспорить, но никогда споров не выигрывает, то ли один из двух бывалых пиратов-близнецов Джон или Шон,
-															то ли попугай Рэй, верный спутник этой команды, то ли её потерял сам капитан корабля.</span><br>
+															<span data-expression="LogicOR(LogicOR(%J%, %S%), LogicOR(%R%, %D%))">то ли юнга Дэн, который любит поспорить, но никогда споров не выигрывает, то ли один из двух бывалых пиратов-близнецов Джон или Шон,
+															то ли попугай Рэй, верный спутник этой команды.</span><br>
 															Для расследования происшедшего случая есть некоторая информация, которую нужно сравнить с картинкой, отвергнуть ложные утверждения
 															и подтвердить верные, так чтобы ответ однозначно указал на виновника.<br>
 															Сначала свои показания дал капитан, в честности которого можно не сомневаться. Он сказал, что за пропавшую монету можно купить три бутылки рома.
@@ -83,7 +83,7 @@ webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figu
 															<span data-expression="LogicImplication(LogicOR(%J%, %S%), %E%)">«Монету взял один из близнецов Джон или Шон, потом они поделили её поровну, значит, она была чётного номинала».</span><br>
 															<span data-expression="LogicEquivalence(%V%, %D%)">«Дэн поспорил с близнецами, что стащит у капитана монету».</span><br>
 															<span data-expression="LogicImplication(%Z%, LogicNOT(%R%))">«Рэй не мог этого сделать, потому что сидит в закрытой клетке».</span><br>
-															<span data-expression="LogicImplication(LogicNOT(%G%), LogicNOT(%L%))">«Капитан корабля плохо видит, но не носит очков. А если бы капитан носил очки, никогда бы не потерял монету».</span><br>
+															<!--<span data-expression="LogicImplication(LogicNOT(%G%), LogicNOT(%L%))">«Капитан корабля плохо видит, но не носит очков. А если бы капитан носил очки, никогда бы не потерял монету».</span><br>-->
 															Кто же замешан в пропаже монеты?<br>
 												 </div>
 											 </div>
@@ -99,7 +99,6 @@ webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figu
 																 <span data-name="J" data-inversion="Джон не крал монету" data-final="true">Джон украл монету</span>
 																 <span data-name="S" data-inversion="Шон не крал монету" data-final="true">Шон украл монету</span>
 																 <span data-name="R" data-inversion="Рэй не крал монету" data-final="true">Рэй украл монету</span>
-																 <span data-name="L" data-inversion="капитан не потерял монету" data-final="true">капитан потерял монету</span>
 																 <span data-name="Z" data-inversion="Рэй сидит в открытой клетке">Рэй сидит в закрытой клетке</span>
 																 <span data-name="E" data-inversion="монета нечётного номинала">монета чётного номинала</span>
 																 <span data-name="V" data-inversion="Дэн проиграл спор">Дэн выиграл спор</span>
