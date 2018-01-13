@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html><html class="no-js" lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Кража свитка</title>
+<meta name="description" content="">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta property="og:image" content="image.jpg">
+			<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+			<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+			<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+			<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+<!-- bootstrap-grid-3.3.4 -->
+<link rel="stylesheet" href="css/styles2.min.css">
+<!-- header.min.css --><style></style><!-- css, webfonts load --><script>!function(e){"use strict";function t(e,t,n){e.addEventListener?e.addEventListener(t,n,!1):e.attachEvent&&e.attachEvent("on"+t,n)}function n(t,n){return e.localStorage&&localStorage[t+"_content"]&&localStorage[t+"_file"]===n}function a(t,a){if(e.localStorage&&e.XMLHttpRequest)n(t,a)?o(localStorage[t+"_content"]):l(t,a);else{var s=r.createElement("link");s.href=a,s.id=t,s.rel="stylesheet",s.type="text/css",r.getElementsByTagName("head")[0].appendChild(s),r.cookie=t}}function l(e,t){var n=new XMLHttpRequest;n.open("GET",t,!0),n.onreadystatechange=function(){4===n.readyState&&200===n.status&&(o(n.responseText),localStorage[e+"_content"]=n.responseText,localStorage[e+"_file"]=t)},n.send()}function o(e){var t=r.createElement("style");t.setAttribute("type","text/css"),r.getElementsByTagName("head")[0].appendChild(t),t.styleSheet?t.styleSheet.cssText=e:t.innerHTML=e}var r=e.document;e.loadCSS=function(e,t,n){var a,l=r.createElement("link");if(t)a=t;else{var o;o=r.querySelectorAll?r.querySelectorAll("style,link[rel=stylesheet],script"):(r.body||r.getElementsByTagName("head")[0]).childNodes,a=o[o.length-1]}var s=r.styleSheets;l.rel="stylesheet",l.href=e,l.media="only x",a.parentNode.insertBefore(l,t?a:a.nextSibling);var c=function(e){for(var t=l.href,n=s.length;n--;)if(s[n].href===t)return e();setTimeout(function(){c(e)})};return l.onloadcssdefined=c,c(function(){l.media=n||"all"}),l},e.loadLocalStorageCSS=function(l,o){n(l,o)||r.cookie.indexOf(l)>-1?a(l,o):t(e,"load",function(){a(l,o)})}}(this);</script><script>loadLocalStorageCSS( "webfonts", "css/fonts.min.css?ver=1.0.0" );</script>
+<script>loadCSS( "css/header.min.css?ver=1.0.0", false, "all" );</script>
+<script>loadCSS( "css/styles.min.css?ver=1.0.0", false, "all" );</script>
+<!-- css load if without js -->
+<noscript>
+<link rel="stylesheet" href="css/fonts.min.css">
+<link rel="stylesheet" href="css/styles.min.css">
+</noscript></head>
+<body>
+			<section class="task-decide">
+					<div class="container-fluid">
+						<div class="row">
+								<div class="col-xs-12">
+									<div class="list">
+										<ul>
+										<li>!X</li>	
+										<li>!Gm</li>
+										<li>!Mv</li>
+										</ul>
+										</div>
+										<div id="solveWindow">
+										<div id="solve"></div>
+											<a class="close-solution-button" href="#" onclick="closeSolution()">
+												<i class="fa fa-times" aria-hidden="true"></i>
+											</a>
+										</div>
+										<div class="row">
+										<div class="col-xs-2 col-sm-1">
+										<ul class="control-panel">
+										<li class="go-back">
+											<a href="../index.html">
+											<i class="fa fa-home" aria-hidden="true"></i></a>
+										</li>
+										<li class="solve-button">
+										<a href="#" onclick="solveButton();"><i class="fa fa-check-square-o" aria-hidden="true"></i></a></li>
+										<li><a class="zoom" data-image="det2_bg.jpg" href="#">
+										<i class="fa fa-search-plus" aria-hidden="true"></i></a></li>
+												<li>
+												<a href="../navigation/help.html"><i class="fa fa-question-circle-o" aria-hidden="true"></i></a>
+												</li>
+										<li class="show-history hidden-md hidden-lg active"><i class="fa fa-align-left" aria-hidden="true"></i></li>
+										<li class="show-workplace hidden-md hidden-lg">
+										<i class="fa fa-archive" aria-hidden="true"></i>
+										</li></ul></div>
+										<div class="col-xs-10 col-sm-11">
+										<div class="row">
+											<div class="col-xs-12 col-md-8 col-lg-9">
+												<div id="picture" style="">
+												
+												<img alt="" class="mainPicture" data-height="475" data-width="1200" src="det2_bg.jpg">
+												<div class="expPicture" data-x="930" data-y="280" data-width="30" data-height="60"></div>  <!--5-->
+												<div class="expPicture" data-x="689" data-y="180" data-width="40" data-height="30"></div> <!--Фигнал-->
+												<div class="expPicture" data-x="310" data-y="330" data-width="80" data-height="80"></div>  <!--физра-->
+												<h4><font color="blue;">*Кликните на картинку, чтобы отобразились улики.</font></h4>
+												<h2>История</h2>
+														Из музея исчез древний и очень ценный свиток. На следующий день состоялось расследование.
+														<br><span data-expression="LogicOR(LogicOR(%V%,%E%),LogicOR(%G%,%M%))">В последнее время музей посещали всего несколько ребят из младшей школы, расположенной неподалёку: Гриша, Миша, Эля и Вова - забрал свиток кто-то из них.</span> Никто из ребят не признаётся, поэтому начнём расследование!
+														<br><br>Всем известно, что Эля ходит в музей каждый день <span data-expression="%Me%" >и в тот день была тоже</span>, а Вова заходит в музей только после занятий по физкультуре, которые проходят по чётным дням недели, поэтому в музее его всегда видят с мешком для спортивной формы. Гриша и Миша враждуют друг с другом из-за Эли, поэтому в музей до сегодняшнего дня приходили только в разные дни, то есть <span data-expression="LogicImplication(%Mm%,LogicNOT(%Mg%))">Гриша никогда не посещал музей, когда там был Миша</span>, <span data-expression="LogicImplication(%Mg%, LogicNOT(%Mm%))">а Миша никогда не посещал музей, когда там был Гриша.</span>При этом каждый из них обязательно появляется в музее, когда там есть Эля. Пару дней назад Миша и Гриша подрались из-за неё, и последние два раза в музей с ней ходил победитель. Известно, что победитель вышел из драки с меньшим уроном для внешнего вида. То есть, <span data-expression="LogicImplication(LogicNOT(%Gm%),LogicImplication(%Me%,%Mm%))" >если Миша победитель и Эля была в музее в день продажи, то Миша был в музее</span>, <span data-expression="LogicImplication(%Gm%,LogicImplication(%Me%,%Mg%))" >если Гриша победитель и Эля была в музее в день продажи, то Гриша был в музее.</span>
+														<br><br>После опроса одноклассников и работников музея удалось собрать некоторую информацию об участниках этого происшествия. Вам нужно отвергнуть ложную и подтвердить правильную, так чтобы ответ однозначно указал на виновника:<br>
+														-   <span data-expression="%Mv%">«Вова был вчера в музее (охранник говорит, что в день пропажи в музее он видел мальчика с мешком)».</span><br>
+															<!-- «Одноклассники Вовы считают, что если он был в день пропажи в музее, то он и взял свиток».<br> -->
+														-   <span data-expression="LogicImplication(LogicNOT(%X%),LogicNOT(%E%))">«Также одноклассники считают, что Эля не брала свиток, потому что она хорошая девочка</span>».<br>
+														-   <span data-expression="%X%">«Однако кое-кто утверждает, что Эля плохо учится, да и вообще она плохая девочка».</span><br>
+														-   <span data-expression="LogicImplication(LogicAND(%Me%,%Gm%), LogicOR(%E%,%G%))">«Если Эля была в музее в день пропажи и Гриша победил Мишу, то в пропаже свитка замешан Гриша или Эля».</span><br>
+														-   <span data-expression="LogicImplication(LogicAND(%Me%,LogicNOT(%Gm%)), LogicOR(%E%,%M%))">«Если же Эля была в музее в день пропажи и при этом Миша победил Гришу, то в пропаже свитка замешан Миша или Эля».</span><br>
+														-   <span data-expression="%Gm%">«В схватке Гриша победил Мишу (об этом кто-то сообщил по секрету)».</span>
+														<span data-expression="LogicImplication(LogicNOT(%Mm%),LogicNOT(%M%))" style="display:none;"></span>
+														<span data-expression="LogicImplication(LogicNOT(%Mv%),LogicNOT(%V%))" style="display:none;"></span>
+														<span data-expression="LogicImplication(LogicNOT(%Mg%),LogicNOT(%G%))" style="display:none;"></span>
+														<span data-expression="LogicImplication(LogicNOT(%Me%),LogicNOT(%E%))" style="display:none;"></span>
+														<br><br>
+														У кого же этот ценный и древний экспонат?
+												 </div>
+											 </div>
+											 <div class="col-xs-11 col-xs-offset-1 col-sm-12 col-sm-offset-0 col-md-4 col-lg-3" style="position: fixed; top:30px; right:-10px; top:30px">
+												 <div class="workplace"><ul class="hidden-sm workplace-caption"><li class="active" target="#variables">Переменные</li>
+														 <li target="#expressions">Лог. выражения</li><li target="#proofs">Доказательства</li></ul>
+														 <ul class="hidden-xs hidden-md hidden-lg workplace-caption">
+														 <li class="active" target="#variables">Переменные</li>
+														 <li target="#expressions">Лог. выражения</li>
+														 <li target="#proofs">Доказательства</li></ul>
+														 <div id="variables" class="workplace-tab">
+																<span data-name="G" data-inversion="Гриша не забрал свиток" data-final="true">Гриша забрал свиток</span>
+																<span data-name="M" data-inversion="Миша не забрал свиток" data-final="true">Миша забрал свиток</span>
+																<span data-name="E" data-inversion="Эля не забрала свиток" data-final="true">Эля забрала свиток</span>
+																<span data-name="V" data-inversion="Вова не забрал свиток" data-final="true">Вова забрал свиток</span>
+																<span data-name="Mv" data-inversion="Вова не был в музее в день пропажи">Вова был в музее в день пропажи</span>
+																<span data-name="Mg" data-inversion="Гриша не был в музее в день пропажи">Гриша был в музее в день пропажи</span>
+																<span data-name="Mm" data-inversion="Миша не был в музее в день пропажи">Миша был в музее в день пропажи</span>
+																<span data-name="Me" data-inversion="Эля не была в музее в день пропажи">Эля была в музее в день пропажи</span>
+																<span data-name="X" data-inversion="Эля учится хорошо, да и вообще хорошая девочка">Эля учится плохо, да и вообще плохая девочка</span>
+																<span data-name="Gm" data-inversion="Миша победил Гришу">Гриша победил Мишу</span>
+														 </div>
+														 <div id="expressions" class="workplace-tab"></div>
+														 <div id="proofs" class="workplace-tab"></div>
+												 </div>
+												 <a href="#"  onclick="solveButton();" class="buttonS" tabindex="0" style="position: fixed; right: 100px;" >Решить</a>
+											 </div>
+										 </div>
+										 </div>
+										</div>
+								 </div>
+							 </div>
+					 </div>
+			 </section>
+			 <div class="hidden"></div><!--[if lt IE 9]>
+					<script src="js/ie/es5-shim.min.js"></script>
+					<script src="js/ie/html5shiv.min.js"></script>
+					<script src="js/ie/html5shiv-printshiv.min.js"></script>
+					<script src="js/ie/respond.min.js"></script>
+				<![endif]--><!-- js load -->
+				<script>var scr = {"scripts":[
+					{"src" : "js/libs.js", "async" : false},
+					{"src" : "js/scripts.js", "async" : false},
+					{"src" : "js/decide.js", "async" : false}
+					]};!function(t,n,r){"use strict";var c=function(t){if("[object Array]"!==Object.prototype.toString.call(t))return!1;for(var r=0;r<t.length;r++){var c=n.createElement("script"),e=t[r];c.src=e.src,c.async=e.async,n.body.appendChild(c)}return!0};t.addEventListener?t.addEventListener("load",function(){c(r.scripts);},!1):t.attachEvent?t.attachEvent("onload",function(){c(r.scripts)}):t.onload=function(){c(r.scripts)}}(window,document,scr);
+					</script>
+	</body>
+</html>

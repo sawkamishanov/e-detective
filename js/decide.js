@@ -5,8 +5,7 @@ $(document).ready(function() {
 	init();
 
 	setCustomScroll($('#picture'), '5px', '#696969');
-	setCustomScroll($('.workplace-tab'), '5px', 'html.clientHeight-120',
-																															'#696969');
+	setCustomScroll($('.workplace-tab'), '5px', 'html.clientHeight-120','#696969');
 	setCustomScroll($('.control-panel'), '3px', '#d9d9d9');
 
 	//Workplace tabs
